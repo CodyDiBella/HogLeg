@@ -4,7 +4,7 @@
 
 1. Fork and clone this repo.
 2. `npm install`.
-3. `npm run start:dev`
+3. `npm run start`
 4. name your database acme_schools_db
 ## Details
 
@@ -19,8 +19,7 @@ For this project, you must use Express to handle HTTP requests and Sequelize to 
 - other client side libraries you will need
 - redux
 - react-redux
-- react-router-dom@5
-- redux-thunk
+- react-router-dom@6
 - axios
 
 ### Requirements + Rubric (see rubric file)
