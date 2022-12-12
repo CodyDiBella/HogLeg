@@ -10,9 +10,8 @@
 
 | Criteria                                                                   | Score | Comments |
 | -------------------------------------------------------------------------- | ----- | -------- |
-| Uses thunks to encapsulate AJAX requests for redux store                   | -/2   |          |
-| Avoids side effects/mutations in reducers and in renders                   | -/2   |          |
-| Takes advantage of components to enforce modularity/separation of concerns | -/2   |          |
+| Uses thunks to encapsulate AJAX requests for redux store                   | -/3   |          |
+| Takes advantage of components to enforce modularity/separation of concerns | -/3   |          |
 
 ### Backend (6/24)
 
