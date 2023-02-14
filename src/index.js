@@ -1,6 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import {Main} from "./components";
+import ReactDOM from 'react-dom';
+
 /* Import and destructure main from src/component/index.js 
 and anything else you may need here */
 
