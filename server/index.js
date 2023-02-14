@@ -1,4 +1,15 @@
-const port = process.env.PORT || 3000;
 const app = require('./app');
+const db = require('./db/db');
 
-app.listen(port, ()=> console.log(`listening on port ${port}`));
+const PORT = process.env.PORT || 3000;
+
+db.sync({ force: false }) // pass { force: true } to drop and recreate all tables
+  .then(() => {
+    console.log('Database synced');
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Error syncing database', err);
+  });

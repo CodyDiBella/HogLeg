@@ -38,7 +38,7 @@
 
   <details>
 
-- [ ] Write a function which sync's and seeds your database when your application starts
+- [x ] Write a function which sync's and seeds your database when your application starts
 
   </details>
 
