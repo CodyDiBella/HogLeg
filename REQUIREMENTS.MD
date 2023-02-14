@@ -20,7 +20,7 @@
 
 - [x ] Write a component to display a list of all students (at least their names)
 - [ x] Write a students sub-reducer to manage students in your Redux store
-- [ ] Display the all-students component when the url matches `/students`
+- [ x] Display the all-students component when the url matches `/students`
 
   </details>
 
@@ -28,7 +28,7 @@
 
   <details>
 
-- [ ] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
+- [ x] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
 
   </details>
 
