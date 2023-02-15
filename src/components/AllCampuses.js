@@ -18,7 +18,7 @@ const AllCampuses = () => {
       {campuses.map(campus => (
         <div key={campus.id}>
           <h2>{campus.name}</h2>
-          <img src={campus.imageUrl} alt={campus.name} />
+          <img src={campus.imageUrl} />
           <p>Address: {campus.address}</p>
           <p>{campus.description}</p>
         </div>

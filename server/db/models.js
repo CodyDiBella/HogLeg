@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const db = require('./db');
 
 const Campus = db.define('campus', {
@@ -36,14 +36,31 @@ const Student = db.define('student', {
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
+    validate: {
+      notEmpty: true,
+    },
   },
   lastName: {
     type: DataTypes.STRING,
     allowNull: false,
+    validate: {
+      notEmpty: true,
+    },
   },
+  imageUrl: {
+    type: DataTypes.STRING,
+    defaultValue: 'https://via.placeholder.com/150',
+  },
+  housePoints: {
+    type: Sequelize.INTEGER,
+    validate: {
+      min: 1,
+      max: 10
+    },
+    defaultValue: () => Math.floor(Math.random() * 10) + 1
+  }
 });
 
-// Define associations between tables
 Campus.hasMany(Student);
 Student.belongsTo(Campus);
 

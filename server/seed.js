@@ -32,96 +32,115 @@ const students = [
   {
     firstName: 'Cody',
     lastName: 'DiBella',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2023/02/hogwarts-legacy-mods-facial-hair.jpg',
     campusId: 2
   },
   {
     firstName: 'Amit',
     lastName: 'Thakkar',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-amit-thakkar-550x309.jpg',
     campusId: 3
   },
   {
     firstName: 'Everett',
     lastName: 'Clopton',
+    imageUrl: 'https://static.wikia.nocookie.net/harrypotter/images/f/fe/Everett_Clopton_HL.png/revision/latest?cb=20230111200634',
     campusId: 3
   },
   {
     firstName: 'Ominis',
     lastName: 'Gaunt',
+    imageUrl: 'https://editors.dexerto.es/wp-content/uploads/sites/3/2023/02/13/ominis-gaunt-hogwarts-legacy-voldemort.jpg',
     campusId: 2
   },
   {
     firstName: 'Natsai',
     lastName: 'Onai',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-natsai-onai-550x309.jpg',
     campusId: 1
   },
   {
     firstName: 'Lucan',
     lastName: 'Brattleby',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-lucan-brattleby-550x309.jpg',
     campusId: 1
   },
   {
     firstName: 'Mahendra',
     lastName: 'Pehlwaan',
+    imageUrl: 'https://static.wikia.nocookie.net/harrypotter/images/2/26/Mahendra_Pehlwaan_HL.png/revision/latest?cb=20230111191709',
     campusId: 3
   },
   {
     firstName: 'Nellie',
     lastName: 'Oggspire',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-nellie-oggspire-550x309.jpg',
     campusId: 1
   },
   {
     firstName: 'Poppy',
     lastName: 'Sweeting',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-poppy-sweeting-550x309.jpg',
     campusId: 4
   },
   {
     firstName: 'Sebastian',
     lastName: 'Sallow',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/12/hogwarts-legacy-characters-sebastian-sallow-550x309.jpg',
     campusId: 2
   },
   {
     firstName: 'Zenobia',
     lastName: 'Noke',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-zenobia-noke-550x309.jpg',
     campusId: 1
   },
   {
     firstName: 'Matilda',
     lastName: 'Weasley',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-Professor-Weasley-550x309.jpg',
     campusId: 1
   },
   {
     firstName: 'Satyavati',
     lastName: 'Shah',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-professor-shah-550x309.jpg',
     campusId: 3
   },
   {
-    firstName: 'Mariabel',
+    firstName: 'Mirabel',
     lastName: 'Garlick',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-professor-garlick-550x309.jpg',
     campusId: 4
   },
   {
     firstName: 'Eleazar',
     lastName: 'Fig',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-professor-fig-550x309.jpg',
     campusId: 1
   },
   {
     firstName: 'Dinah',
     lastName: 'Hecat',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-professor-hecat-550x309.jpg',
     campusId: 3
   },
   {
     firstName: 'Aesop',
     lastName: 'Sharp',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-professor-sharp-550x309.jpg',
     campusId: 2
   },
   {
     firstName: 'Abraham',
     lastName: 'Ronen',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-professor-ronen-550x309.jpg',
     campusId: 2
   },
   {
     firstName: 'Phineas',
     lastName: 'Black',
+    imageUrl: 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA16eol8.img?m=6&q=80',
     campusId: 2
   }
 ];

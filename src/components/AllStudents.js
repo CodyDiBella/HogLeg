@@ -18,11 +18,14 @@ const AllStudents = () => {
       {students.map(student => (
         <div key={student.id}>
           <h1>{`${student.firstName} ${student.lastName}`}</h1>
-          {/* <img src={student.imageUrl} alt={`${student.firstName} ${student.lastName}`} /> */}
+          <img src={student.imageUrl} />
+          <p>{`${student.firstName.charAt(0)}${student.lastName}@Hogwarts.com`}</p>
+          <p>House Points: {student.housePoints}</p>
         </div>
       ))}
     </div>
   );
 };
+
 
 export default AllStudents;
