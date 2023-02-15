@@ -70,7 +70,7 @@
   - [ x] imageUrl - with a default value
   - [ x] gpa - decimal between 0.0 and 4.0
 
-- [ ] Students may be associated with at most one campus. Likewise, campuses may be associated with many students
+- [x ] Students may be associated with at most one campus. Likewise, campuses may be associated with many students
 
   </details>
 
@@ -89,10 +89,10 @@
   <details>
   
   - Write a component to display a single campus with the following information:
-    - [ ] The campus's name, image, address and description
-    - [ ] A list of the names of all students in that campus (or a helpful message if it doesn't have any students)
-  - [ ] Display the appropriate campus's info when the url matches `/campuses/:campusId`
-  - [ ] Clicking on a campus from the campuses view should navigate to show that campus
+    - [x ] The campus's name, image, address and description
+    - [ x] A list of the names of all students in that campus (or a helpful message if it doesn't have any students)
+  - [x ] Display the appropriate campus's info when the url matches `/campuses/:campusId`
+  - [ x] Clicking on a campus from the campuses view should navigate to show that campus
 
 - [ ] Clicking on the name of a student in the campus view should navigate to show that student in the student view
 

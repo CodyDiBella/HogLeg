@@ -1,17 +1,17 @@
-/* Here is where you will configure the store 
-
-*/ 
-
 import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
 import campusesReducer from "../reducers/campuses";
-import React from 'react';
-import ReactDOM from 'react-dom';
+import campusReducer from "../reducers/campus";
+import singleCampusReducer from "../reducers/singleCampus";
 
+const rootReducer = combineReducers({
+  campuses: campusesReducer,
+  campus: campusReducer,
+  singleCampus: singleCampusReducer,
+});
 
 const store = configureStore({
-  reducer: {
-    campuses: campusesReducer,
-  },
+  reducer: rootReducer,
 });
 
 export default store;

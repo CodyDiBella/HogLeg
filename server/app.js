@@ -28,6 +28,21 @@ app.get('/api/students', async (req, res, next) => {
   }
 });
 
+app.get('/api/campuses/:id', async (req, res, next) => {
+  try {
+    const campus = await Campus.findByPk(req.params.id, {
+      include: {
+        model: Student,
+        attributes: ['id', 'firstName', 'lastName']
+      }
+    });
+    res.json(campus);
+  } catch (err) {
+    next(err);
+  }
+});
+
+
 
 app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));

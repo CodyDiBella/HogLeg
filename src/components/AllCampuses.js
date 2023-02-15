@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const AllCampuses = () => {
   const [campuses, setCampuses] = useState([]);
@@ -17,10 +18,12 @@ const AllCampuses = () => {
       <h1>All Campuses</h1>
       {campuses.map(campus => (
         <div key={campus.id}>
+          <Link to={`/campuses/${campus.id}`}>
           <h2>{campus.name}</h2>
           <img src={campus.imageUrl} />
           <p>Address: {campus.address}</p>
           <p>{campus.description}</p>
+          </Link>
         </div>
       ))}
     </div>
