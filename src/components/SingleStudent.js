@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const SingleStudent = () => {
   const { studentId } = useParams();
   const [student, setStudent] = useState(null);
   const [campus, setCampus] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchStudent() {
@@ -15,6 +16,11 @@ const SingleStudent = () => {
     }
     fetchStudent();
   }, [studentId]);
+
+  const handleDeleteStudentClick = async (id) => {
+    await fetch(`/api/students/${id}`, { method: "DELETE" });
+    navigate("/students");
+  };
 
   return (
     <div>
@@ -35,6 +41,9 @@ const SingleStudent = () => {
                 : "This person has not yet been sorted"}
             </h2>
           </Link>
+          <button onClick={() => handleDeleteStudentClick(student.id)}>
+            Delete Student
+          </button>
         </div>
       )}
     </div>

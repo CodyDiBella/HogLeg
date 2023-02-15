@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const SingleCampus = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [campus, setCampus] = useState(null);
 
   useEffect(() => {
@@ -13,6 +14,17 @@ const SingleCampus = () => {
     }
     fetchCampus();
   }, [id]);
+
+  const handleDeleteClick = async (id) => {
+    try {
+      await fetch(`/api/campuses/${id}`, {
+        method: "DELETE",
+      });
+      navigate("/campuses");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div>
@@ -38,6 +50,9 @@ const SingleCampus = () => {
           ) : (
             <p>No students in this house!</p>
           )}
+          <button onClick={() => handleDeleteClick(campus.id)}>
+            Delete House
+          </button>
         </div>
       )}
     </div>

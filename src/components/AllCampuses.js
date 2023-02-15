@@ -5,7 +5,6 @@ const AllCampuses = () => {
   const [campuses, setCampuses] = useState([]);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     async function fetchCampuses() {
       const response = await fetch('/api/campuses');
@@ -19,17 +18,30 @@ const AllCampuses = () => {
     navigate('/add-campus');
   };
 
+  const handleDeleteClick = async (id) => {
+    try {
+      const response = await fetch(`/api/campuses/${id}`, { method: 'DELETE' });
+
+      if (response.ok) {
+        setCampuses(campuses.filter((campus) => campus.id !== id));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div>
       <h1>All Campuses</h1>
       <button onClick={handleAddCampusClick}>Add Campus</button>
-      {campuses.map(campus => (
+      {campuses.map((campus) => (
         <div key={campus.id}>
+          <button onClick={() => handleDeleteClick(campus.id)}>X</button>
           <Link to={`/campuses/${campus.id}`}>
-          <h2>{campus.name}</h2>
-          <img src={campus.imageUrl} />
-          <p>Address: {campus.address}</p>
-          <p>{campus.description}</p>
+            <h2>{campus.name}</h2>
+            <img src={campus.imageUrl} />
+            <p>Address: {campus.address}</p>
+            <p>{campus.description}</p>
           </Link>
         </div>
       ))}

@@ -94,6 +94,28 @@ app.post('/api/students', async (req, res) => {
   }
 })
 
+app.delete('/api/students/:id', async (req, res, next) => {
+  try {
+    const student = await Student.findByPk(req.params.id);
+    await student.destroy();
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+});
+
+
+app.delete('/api/campuses/:id', async (req, res, next) => {
+  try {
+    const campus = await Campus.findByPk(req.params.id);
+    await campus.destroy();
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+});
+
+
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })
