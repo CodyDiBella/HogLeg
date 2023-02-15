@@ -60,7 +60,7 @@
 
   <details>
   
-  - [ ] Write a route to serve up all students
+  - [x ] Write a route to serve up all students
 
 - Write a `students` model with the following information:
 

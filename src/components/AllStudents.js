@@ -14,11 +14,11 @@ const AllStudents = () => {
 
   return (
     <div>
- <h1>All Students</h1>
-      {students.map(students => (
-        <div key={students.id}>
-          <h2>{students.name}</h2>
-          <img src={students.imageUrl} alt={students.name} />
+      <h1>All Students</h1>
+      {students.map(student => (
+        <div key={student.id}>
+          <h1>{`${student.firstName} ${student.lastName}`}</h1>
+          {/* <img src={student.imageUrl} alt={`${student.firstName} ${student.lastName}`} /> */}
         </div>
       ))}
     </div>
