@@ -2,31 +2,33 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const volleyball = require('volleyball')
+const bodyParser = require('body-parser')
 const { Campus, Student } = require('./db/models')
+
 const app = express()
 
-app.use(express.static(path.join(__dirname, '..','public')))
-
+app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(cors())
 app.use(volleyball)
+app.use(bodyParser.json())
 
 app.get('/api/campuses', async (req, res, next) => {
   try {
-    const campuses = await Campus.findAll();
-    res.json(campuses);
+    const campuses = await Campus.findAll()
+    res.json(campuses)
   } catch (err) {
-    next(err);
+    next(err)
   }
-});
+})
 
 app.get('/api/students', async (req, res, next) => {
   try {
-    const students = await Student.findAll();
-    res.json(students);
+    const students = await Student.findAll()
+    res.json(students)
   } catch (err) {
-    next(err);
+    next(err)
   }
-});
+})
 
 app.get('/api/campuses/:id', async (req, res, next) => {
   try {
@@ -35,12 +37,12 @@ app.get('/api/campuses/:id', async (req, res, next) => {
         model: Student,
         attributes: ['id', 'firstName', 'lastName']
       }
-    });
-    res.json(campus);
+    })
+    res.json(campus)
   } catch (err) {
-    next(err);
+    next(err)
   }
-});
+})
 
 app.get('/api/students/:id', async (req, res, next) => {
   try {
@@ -50,16 +52,34 @@ app.get('/api/students/:id', async (req, res, next) => {
         attributes: ['id', 'name'],
         required: false
       }
-    });
-    res.json(student);
+    })
+    res.json(student)
   } catch (err) {
-    next(err);
+    next(err)
   }
-});
+})
 
+app.post('/api/campuses', async (req, res) => {
+  const { name, address, imageUrl, description } = req.body
 
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-});
+  try {
+    const newCampus = await Campus.create({
+      name,
+      address,
+      imageUrl,
+      description
+    })
 
-module.exports = app;
+    res.status(201).json(newCampus)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Failed to create campus' })
+  }
+})
+
+app.use('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
+})
+
+module.exports = app
+;

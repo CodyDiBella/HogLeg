@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AllCampuses = () => {
   const [campuses, setCampuses] = useState([]);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     async function fetchCampuses() {
@@ -13,9 +15,14 @@ const AllCampuses = () => {
     fetchCampuses();
   }, []);
 
+  const handleAddCampusClick = () => {
+    navigate('/add-campus');
+  };
+
   return (
     <div>
       <h1>All Campuses</h1>
+      <button onClick={handleAddCampusClick}>Add Campus</button>
       {campuses.map(campus => (
         <div key={campus.id}>
           <Link to={`/campuses/${campus.id}`}>

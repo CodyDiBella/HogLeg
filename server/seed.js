@@ -44,7 +44,7 @@ const students = [
   {
     firstName: 'Everett',
     lastName: 'Clopton',
-    imageUrl: 'https://static.wikia.nocookie.net/harrypotter/images/f/fe/Everett_Clopton_HL.png/revision/latest?cb=20230111200634',
+    imageUrl: 'https://hogwartslegacy.wiki.fextralife.com/file/Hogwarts-Legacy/everett_clopton_student_hogwarts_legacy_wiki_3755px.png',
     campusId: 3
   },
   {
@@ -68,7 +68,7 @@ const students = [
   {
     firstName: 'Mahendra',
     lastName: 'Pehlwaan',
-    imageUrl: 'https://static.wikia.nocookie.net/harrypotter/images/2/26/Mahendra_Pehlwaan_HL.png/revision/latest?cb=20230111191709',
+    imageUrl: 'https://i.postimg.cc/3rFMXWHy/PXL-20230215-164150042-MP.jpg',
     campusId: 3
   },
   {
@@ -98,7 +98,7 @@ const students = [
   {
     firstName: 'Matilda',
     lastName: 'Weasley',
-    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-Professor-Weasley-550x309.jpg',
+    imageUrl: 'https://www.theloadout.com/wp-content/sites/theloadout/2023/01/hogwarts-legacy-characters-sebastian.jpg',
     campusId: 1
   },
   {
@@ -140,7 +140,7 @@ const students = [
   {
     firstName: 'Phineas',
     lastName: 'Black',
-    imageUrl: 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA16eol8.img?m=6&q=80',
+    imageUrl: 'https://www.theloadout.com/wp-content/sites/theloadout/2023/01/hogwarts-legacy-characters-phineas.jpg',
     campusId: 2
   }
 ];
