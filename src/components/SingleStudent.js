@@ -28,13 +28,13 @@ const SingleStudent = () => {
             student.lastName
           }@Hogwarts.com`}</p>
           <p>House Points: {student.housePoints}</p>
-          <Link to={`/campuses/${campus?.id}`}>
+          <Link to={campus ? `/campuses/${campus.id}` : `/unassigned`}>
             <h2>
               {campus
                 ? `${campus.name}`
                 : "This person has not yet been sorted"}
             </h2>
-          </Link>{" "}
+          </Link>
         </div>
       )}
     </div>

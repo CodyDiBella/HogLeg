@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 
 const AllStudents = () => {
   const [students, setStudents] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchStudents() {
@@ -13,9 +14,14 @@ const AllStudents = () => {
     fetchStudents();
   }, []);
 
+  const handleAddStudentClick = () => {
+    navigate('/add-student');
+  };
+
   return (
     <div>
       <h1>All Students</h1>
+      <button onClick={handleAddStudentClick}>Add Student</button>
       {students.map(student => (
         <div key={student.id}>
            <Link to={`/students/${student.id}`}>

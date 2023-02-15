@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const defaultImageUrl = 'https://secretchicago.com/wp-content/uploads/2022/09/harrypotter5.jpg1_-1024x683.jpg';
+
 const AddCampusForm = () => {
   const [name, setName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -10,7 +12,6 @@ const AddCampusForm = () => {
     evt.preventDefault();
     console.log('handleSubmit: ', evt)
 
-    // Make an AJAX request to the server
     fetch('/api/campuses', {
       method: 'POST',
       headers: {
@@ -48,6 +49,7 @@ const AddCampusForm = () => {
   function handleDescriptionChange(evt) {
     setDescription(evt.target.value);
   }
+
 
   return (
     <form className='addCampus' onSubmit={handleSubmit}>

@@ -77,9 +77,25 @@ app.post('/api/campuses', async (req, res) => {
   }
 })
 
+app.post('/api/students', async (req, res) => {
+  const { firstName, lastName, imageUrl,} = req.body
+
+  try {
+    const newStudent = await Student.create({
+      firstName,
+      lastName,
+      imageUrl
+    })
+
+    res.status(201).json(newStudent)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Failed to create student' })
+  }
+})
+
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
-module.exports = app
-;
+module.exports = app;
