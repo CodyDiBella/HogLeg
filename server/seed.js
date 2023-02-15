@@ -4,19 +4,19 @@ const { Campus, Student } = require('./db/models');
 const campuses = [
   {
     name: 'Gryffindor',
-    imageUrl: 'https://1000logos.net/wp-content/uploads/2021/11/Gryffindor-Logo.png'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F2pqi0nkvKuzEaa3E7Zvy3z%2Fd6be33d28c462d9e7a3ada9978ab91dc%2FGryffindor_House_Pride_Collections.svg&w=768&q=75'
   },
   {
     name: 'Slytherin',
-    imageUrl: 'https://www.pngitem.com/pimgs/m/48-488426_harry-potter-logo-slytherin-hd-png-download.png'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F2hc0ybmCjDUBRqNgZIMtgU%2F8f4a5cec029262ebbf51641ff2436f19%2FSlytherin_House_Pride_Collection_V2.svg&w=768&q=75'
   },
   {
     name: 'Ravenclaw',
-    imageUrl: 'https://w7.pngwing.com/pngs/563/589/png-transparent-ravenclaw-logo-ravenclaw-house-fictional-universe-of-harry-potter-common-room-hogwarts-gryffindor-harry-potter-ravenclaw-logo-helga-hufflepuff-slytherin-house.png'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F4J9d6OwnbCgHYbb1SJEB3e%2Fe30f461a050996d552291f11aac100f6%2FRavenclaw_Pride_Collection_Symbol.svg&w=768&q=75'
   },
   {
     name: 'Hufflepuff',
-    imageUrl: 'https://toppng.com/uploads/preview/hogwarts-hufflepuff-crest-transparent-harry-potter-hufflepuff-crest-11563370957vnvzb1qcnf.png'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F4osKNxztknHP1KoQbVDAoS%2F768390db4a6cddc624f0afb4c82f8641%2FHufflepuff_House_Pride_Collection_Symbol.svg&w=768&q=75'
   }
 ];
 
