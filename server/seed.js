@@ -23,79 +23,98 @@ const campuses = [
 const students = [
   {
     firstName: 'Cody',
-    lastName: 'DiBella'
+    lastName: 'DiBella',
+    campusId: 2
   },
   {
     firstName: 'Amit',
-    lastName: 'Thakkar'
+    lastName: 'Thakkar',
+    campusId: 3
   },
   {
     firstName: 'Everett',
-    lastName: 'Clopton'
+    lastName: 'Clopton',
+    campusId: 3
   },
   {
     firstName: 'Ominis',
-    lastName: 'Gaunt'
+    lastName: 'Gaunt',
+    campusId: 2
   },
   {
     firstName: 'Natsai',
-    lastName: 'Onai'
+    lastName: 'Onai',
+    campusId: 1
   },
   {
     firstName: 'Lucan',
-    lastName: 'Brattleby'
+    lastName: 'Brattleby',
+    campusId: 1
   },
   {
     firstName: 'Mahendra',
-    lastName: 'Pehlwaan'
+    lastName: 'Pehlwaan',
+    campusId: 3
   },
   {
     firstName: 'Nellie',
-    lastName: 'Oggspire'
+    lastName: 'Oggspire',
+    campusId: 1
   },
   {
     firstName: 'Poppy',
-    lastName: 'Sweeting'
+    lastName: 'Sweeting',
+    campusId: 4
   },
   {
     firstName: 'Sebastian',
-    lastName: 'Sallow'
+    lastName: 'Sallow',
+    campusId: 2
   },
   {
     firstName: 'Zenobia',
-    lastName: 'Noke'
+    lastName: 'Noke',
+    campusId: 1
   },
   {
     firstName: 'Matilda',
-    lastName: 'Weasley'
+    lastName: 'Weasley',
+    campusId: 1
   },
   {
     firstName: 'Satyavati',
-    lastName: 'Shah'
+    lastName: 'Shah',
+    campusId: 3
   },
   {
     firstName: 'Mariabel',
-    lastName: 'Garlick'
+    lastName: 'Garlick',
+    campusId: 4
   },
   {
     firstName: 'Eleazar',
-    lastName: 'Fig'
+    lastName: 'Fig',
+    campusId: 1
   },
   {
     firstName: 'Dinah',
-    lastName: 'Hecat'
+    lastName: 'Hecat',
+    campusId: 3
   },
   {
     firstName: 'Aesop',
-    lastName: 'Sharp'
+    lastName: 'Sharp',
+    campusId: 2
   },
   {
     firstName: 'Abraham',
-    lastName: 'Ronen'
+    lastName: 'Ronen',
+    campusId: 2
   },
   {
     firstName: 'Phineas',
-    lastName: 'Black'
+    lastName: 'Black',
+    campusId: 2
   }
 ];
 
@@ -107,12 +126,10 @@ const seed = async () => {
   });
 
   const createdStudents = await Student.bulkCreate(
-    students.map((student) => ({
-      ...student,
-      campusId: createdCampuses[Math.floor(Math.random() * createdCampuses.length)].id,
-    })),
+    students,
     { returning: true }
-  );
+);
+
 
   console.log(`Seeded ${createdCampuses.length} campuses and ${createdStudents.length} students.`);
 };
