@@ -14,11 +14,13 @@ const AllCampuses = () => {
 
   return (
     <div>
- <h1>All Campuses</h1>
+      <h1>All Campuses</h1>
       {campuses.map(campus => (
         <div key={campus.id}>
           <h2>{campus.name}</h2>
           <img src={campus.imageUrl} alt={campus.name} />
+          <p>Address: {campus.address}</p>
+          <p>{campus.description}</p>
         </div>
       ))}
     </div>

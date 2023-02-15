@@ -4,19 +4,27 @@ const { Campus, Student } = require('./db/models');
 const campuses = [
   {
     name: 'Gryffindor',
-    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F2pqi0nkvKuzEaa3E7Zvy3z%2Fd6be33d28c462d9e7a3ada9978ab91dc%2FGryffindor_House_Pride_Collections.svg&w=768&q=75'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F2pqi0nkvKuzEaa3E7Zvy3z%2Fd6be33d28c462d9e7a3ada9978ab91dc%2FGryffindor_House_Pride_Collections.svg&w=768&q=75',
+    address: 'South Wing of the castle on the east side',
+    description: 'Courage. Bravery. Nerve. Chivalry'
   },
   {
     name: 'Slytherin',
-    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F2hc0ybmCjDUBRqNgZIMtgU%2F8f4a5cec029262ebbf51641ff2436f19%2FSlytherin_House_Pride_Collection_V2.svg&w=768&q=75'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F2hc0ybmCjDUBRqNgZIMtgU%2F8f4a5cec029262ebbf51641ff2436f19%2FSlytherin_House_Pride_Collection_V2.svg&w=768&q=75',
+    address: 'Behind a bare stretch of stone wall in the dungeons',
+    description: 'Ambition. Resourcefulness. Determination. Cleverness'
   },
   {
     name: 'Ravenclaw',
-    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F4J9d6OwnbCgHYbb1SJEB3e%2Fe30f461a050996d552291f11aac100f6%2FRavenclaw_Pride_Collection_Symbol.svg&w=768&q=75'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F4J9d6OwnbCgHYbb1SJEB3e%2Fe30f461a050996d552291f11aac100f6%2FRavenclaw_Pride_Collection_Symbol.svg&w=768&q=75',
+    address: 'Top of a spiral staircase that started on the fifth floor',
+    description: 'Cleverness. Wisdom. Wit. Intellectual Ability. Creativity'
   },
   {
     name: 'Hufflepuff',
-    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F4osKNxztknHP1KoQbVDAoS%2F768390db4a6cddc624f0afb4c82f8641%2FHufflepuff_House_Pride_Collection_Symbol.svg&w=768&q=75'
+    imageUrl: 'https://www.wizardingworld.com/_next/image?url=https%3A%2F%2F%2F%2Fimages.ctfassets.net%2Fusf1vwtuqyxm%2F4osKNxztknHP1KoQbVDAoS%2F768390db4a6cddc624f0afb4c82f8641%2FHufflepuff_House_Pride_Collection_Symbol.svg&w=768&q=75',
+    address: 'In a nook on the right hand side of the kitchen corridor, concealed behind a stack of barrels',
+    description: 'Justice. Loyalty. Patience. Hard Work'
   }
 ];
 

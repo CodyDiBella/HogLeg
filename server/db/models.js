@@ -5,10 +5,30 @@ const Campus = db.define('campus', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
+    validate: {
+      notEmpty: true,
+      notNull: true,
+    },
   },
   imageUrl: {
     type: DataTypes.STRING,
-    defaultValue: 'https://www.placecage.com/200/300',
+    defaultValue: 'https://via.placeholder.com/300',
+  },
+  address: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      notNull: true,
+    },
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      notNull: true,
+    },
   },
 });
 
