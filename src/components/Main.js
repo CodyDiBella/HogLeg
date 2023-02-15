@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import AllCampuses from './AllCampuses';
 import AllStudents from './AllStudents';
 import SingleCampus from './SingleCampus';
+import SingleStudent from './SingleStudent';
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
           <Route path="/campuses" element={<AllCampuses />} />
           <Route path="/students" element={<AllStudents />} />
           <Route path="/campuses/:id" element={<SingleCampus />} />
+          <Route path="/students/:studentId" element={<SingleStudent />} />
         </Routes>
     </Router>
   );

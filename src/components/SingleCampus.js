@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const SingleCampus = () => {
   const { id } = useParams();
@@ -26,8 +26,12 @@ const SingleCampus = () => {
             <div>
               <h2>Students:</h2>
               <ul>
-                {campus.students.map(student => (
-                  <li key={student.id}>{student.firstName} {student.lastName}</li>
+                {campus.students.map((student) => (
+                  <li key={student.id}>
+                    <Link to={`/students/${student.id}`}>
+                      {student.firstName} {student.lastName}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>

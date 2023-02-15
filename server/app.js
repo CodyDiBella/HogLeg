@@ -42,6 +42,20 @@ app.get('/api/campuses/:id', async (req, res, next) => {
   }
 });
 
+app.get('/api/students/:id', async (req, res, next) => {
+  try {
+    const student = await Student.findByPk(req.params.id, {
+      include: {
+        model: Campus,
+        attributes: ['id', 'name'],
+        required: false
+      }
+    });
+    res.json(student);
+  } catch (err) {
+    next(err);
+  }
+});
 
 
 app.use("*", (req, res) => {
