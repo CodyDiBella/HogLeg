@@ -40,8 +40,6 @@ const AllCampuses = () => {
           <Link to={`/campuses/${campus.id}`}>
             <h2>{campus.name}</h2>
             <img src={campus.imageUrl} />
-            <p>Address: {campus.address}</p>
-            <p>{campus.description}</p>
           </Link>
         </div>
       ))}

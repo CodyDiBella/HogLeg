@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import UpdateCampusForm from "./UpdateCampusForm";
 
 const SingleCampus = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [campus, setCampus] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     async function fetchCampus() {
@@ -14,6 +16,25 @@ const SingleCampus = () => {
     }
     fetchCampus();
   }, [id]);
+
+  const handleUpdateCampus = async (updatedFields) => {
+    try {
+      const response = await fetch(`/api/campuses/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedFields),
+      });
+      const data = await response.json();
+      setCampus({ ...campus, ...data });
+      setShowForm(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  
 
   const handleDeleteClick = async (id) => {
     try {
@@ -34,7 +55,23 @@ const SingleCampus = () => {
           <img src={campus.imageUrl} alt={campus.name} />
           <p>Address: {campus.address}</p>
           <p>{campus.description}</p>
-          {campus.students.length > 0 ? (
+          {!showForm && (
+            <button onClick={() => setShowForm(true)}>Update House</button>
+          )}
+          {showForm && (
+            <UpdateCampusForm
+              campus={campus}
+              onUpdate={handleUpdateCampus}
+              onCancel={() => setShowForm(false)}
+            />
+          )}
+          {showForm && (
+            <button onClick={() => setShowForm(false)}>Cancel</button>
+          )}
+          <button onClick={() => handleDeleteClick(campus.id)}>
+            Delete House
+          </button>
+          {campus.students && campus.students.length > 0 && (
             <div>
               <h2>Students:</h2>
               <ul>
@@ -47,16 +84,14 @@ const SingleCampus = () => {
                 ))}
               </ul>
             </div>
-          ) : (
+          )}
+          {(!campus.students || campus.students.length === 0) && (
             <p>No students in this house!</p>
           )}
-          <button onClick={() => handleDeleteClick(campus.id)}>
-            Delete House
-          </button>
         </div>
       )}
     </div>
-  );
+  );  
 };
 
 export default SingleCampus;
