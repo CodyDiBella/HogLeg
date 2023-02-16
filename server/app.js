@@ -115,6 +115,15 @@ app.put('/api/students/:id', async (req, res, next) => {
   }
 });
 
+app.put('/api/students/:id/campus', async (req, res, next) => {
+  try {
+    const student = await Student.findByPk(req.params.id);
+    await student.update({ campusId: req.body.campusId });
+    res.json(student);
+  } catch (err) {
+    next(err);
+  }
+});
 
 
 app.delete('/api/students/:id', async (req, res, next) => {

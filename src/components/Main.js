@@ -8,6 +8,7 @@ import SingleStudent from './SingleStudent';
 import AddCampusForm from './AddCampusForm';
 import AddStudentForm from './AddStudentForm';
 import UnassignedStudents from './UnassignedStudents';
+import TransferStudentForm from './TransferStudentForm';
 
 const Main = () => {
   return (
@@ -23,6 +24,7 @@ const Main = () => {
           <Route path="/add-campus" element={<AddCampusForm />} />
           <Route path="/add-student" element={<AddStudentForm />} />
           <Route path="/unassigned" element={<UnassignedStudents />} />
+          <Route path="/students/:studentId/transfer" element={<TransferStudentForm />} />
         </Routes>
     </Router>
   );

@@ -41,6 +41,10 @@ const SingleStudent = () => {
     navigate("/students");
   };
 
+  const handleSortingHatClick = () => {
+    navigate(`/students/${studentId}/transfer`);
+  };
+
   return (
     <div>
       {student && (
@@ -73,6 +77,7 @@ const SingleStudent = () => {
                 : "This person has not yet been sorted"}
             </h2>
           </Link>
+          <button onClick={handleSortingHatClick}>Sorting Hat</button>
           <button onClick={() => handleDeleteStudentClick(student.id)}>
             Delete Student
           </button>

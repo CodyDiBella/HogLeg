@@ -98,7 +98,7 @@ const students = [
   {
     firstName: 'Matilda',
     lastName: 'Weasley',
-    imageUrl: 'https://www.theloadout.com/wp-content/sites/theloadout/2023/01/hogwarts-legacy-characters-sebastian.jpg',
+    imageUrl: 'https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/hogwarts-legacy-characters-Professor-Weasley-550x309.jpg',
     campusId: 1
   },
   {
