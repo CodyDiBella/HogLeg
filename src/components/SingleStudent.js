@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import UpdateStudentForm from "./UpdateStudentForm";
 
 const SingleStudent = () => {
   const { studentId } = useParams();
+  const [showForm, setShowForm] = useState(false);
   const [student, setStudent] = useState(null);
   const [campus, setCampus] = useState(null);
   const navigate = useNavigate();
@@ -16,6 +18,23 @@ const SingleStudent = () => {
     }
     fetchStudent();
   }, [studentId]);
+
+  const handleUpdateStudent = async (updatedStudent) => {
+    try {
+      const response = await fetch(`/api/students/${student.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedStudent),
+      });
+      const data = await response.json();
+      setStudent(data);
+      setShowForm(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleDeleteStudentClick = async (id) => {
     await fetch(`/api/students/${id}`, { method: "DELETE" });
@@ -34,6 +53,19 @@ const SingleStudent = () => {
             student.lastName
           }@Hogwarts.com`}</p>
           <p>House Points: {student.housePoints}</p>
+          {!showForm && (
+            <button onClick={() => setShowForm(true)}>Update Student</button>
+          )}
+          {showForm && (
+            <UpdateStudentForm
+              student={student}
+              onUpdate={handleUpdateStudent}
+              onCancel={() => setShowForm(false)}
+            />
+          )}
+          {showForm && (
+            <button onClick={() => setShowForm(false)}>Cancel</button>
+          )}
           <Link to={campus ? `/campuses/${campus.id}` : `/unassigned`}>
             <h2>
               {campus
