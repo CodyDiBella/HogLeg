@@ -17,24 +17,45 @@ const SingleCampus = () => {
     fetchCampus();
   }, [id]);
 
-  const handleUpdateCampus = async (updatedFields) => {
+  const handleUpdateCampus = async (updatedCampus) => {
     try {
+      const { students, ...updatedCampusWithoutStudents } = updatedCampus; // Exclude students from the updated campus object
       const response = await fetch(`/api/campuses/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedFields),
+        body: JSON.stringify(updatedCampusWithoutStudents), // Only send the updated campus data without the associated students
       });
       const data = await response.json();
-      setCampus({ ...campus, ...data });
+      setCampus(data);
       setShowForm(false);
     } catch (error) {
       console.error(error);
     }
   };
-  
-  
+
+  const handleUnregisterStudent = async (studentId) => {
+    try {
+      const response = await fetch(`/api/students/${studentId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ campusId: null }), // Set the student's campus ID to null
+      });
+      const data = await response.json();
+      setCampus((prevCampus) => {
+        // Create a new campus object with the updated student list
+        const updatedStudents = prevCampus.students.filter(
+          (student) => student.id !== studentId
+        );
+        return { ...prevCampus, students: updatedStudents };
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleDeleteClick = async (id) => {
     try {
@@ -80,6 +101,9 @@ const SingleCampus = () => {
                     <Link to={`/students/${student.id}`}>
                       {student.firstName} {student.lastName}
                     </Link>
+                    <button onClick={() => handleUnregisterStudent(student.id)}>
+                      Unregister
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -91,7 +115,7 @@ const SingleCampus = () => {
         </div>
       )}
     </div>
-  );  
+  );
 };
 
 export default SingleCampus;
