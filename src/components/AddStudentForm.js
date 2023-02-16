@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 const AddStudentForm = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const navigate = useNavigate();
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -20,6 +21,7 @@ const AddStudentForm = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+        navigate(`/students/${data.id}`); // Navigate to the new student's single view
       })
       .catch((error) => {
         console.error('Error:', error);

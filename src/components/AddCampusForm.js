@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const defaultImageUrl = 'https://secretchicago.com/wp-content/uploads/2022/09/harrypotter5.jpg1_-1024x683.jpg';
 
 const AddCampusForm = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [address, setAddress] = useState('');
@@ -22,6 +24,7 @@ const AddCampusForm = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+        navigate(`/campuses/${data.id}`);
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -49,7 +52,6 @@ const AddCampusForm = () => {
   function handleDescriptionChange(evt) {
     setDescription(evt.target.value);
   }
-
 
   return (
     <form className='addCampus' onSubmit={handleSubmit}>
