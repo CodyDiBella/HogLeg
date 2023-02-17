@@ -36,7 +36,7 @@ function TransferStudentForm() {
     }
   };
 
-  // Fetch the student with the given ID from the server
+
   useEffect(() => {
     const fetchStudent = async () => {
       try {
@@ -45,7 +45,6 @@ function TransferStudentForm() {
           throw response;
         }
         const data = await response.json();
-        // set the default campusId to the student's current campus
         setCampusId(data.campus?.id || "");
       } catch (error) {
         console.error(error);
@@ -57,7 +56,7 @@ function TransferStudentForm() {
   return (
     <div className="sortingHat addForms">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="campus">Select a campus: </label>
+        <label htmlFor="campus">Choose a house!: </label>
         <select
           id="campus"
           name="campus"

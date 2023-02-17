@@ -3,7 +3,7 @@ const db = require('./db/db');
 
 const PORT = process.env.PORT || 3000;
 
-db.sync({ force: false }) // pass { force: true } to drop and recreate all tables
+db.sync({ force: false })
   .then(() => {
     console.log('Database synced');
     app.listen(PORT, () => {

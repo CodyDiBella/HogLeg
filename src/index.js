@@ -3,9 +3,10 @@ import { createRoot } from "react-dom/client";
 import {Main} from "./components";
 import ReactDOM from 'react-dom';
 
-/* Import and destructure main from src/component/index.js 
-and anything else you may need here */
-
+window.addEventListener("mousemove", e => {
+        cursor.style.top = e.pageY + "px"
+        cursor.style.left = e.pageX + "px"
+    })
 
 const container = document.getElementById("root")
 const root = createRoot(container)

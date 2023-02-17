@@ -26,14 +26,13 @@ const AddStudentForm = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        // Redirect to the new student's page
         window.location.href = `/students/${data.id}`;
       })
       .catch((error) => {
         console.error('Error:', error);
       });
 
-    // Clear the form and error message
+
     setFirstName('');
     setLastName('');
     setImageUrl('');

@@ -19,16 +19,16 @@ const SingleCampus = () => {
 
   const handleUpdateCampus = async (updatedCampus) => {
     try {
-      const { students, ...updatedCampusWithoutStudents } = updatedCampus; // Exclude students from the updated campus object
+      const { students, ...updatedCampusWithoutStudents } = updatedCampus;
       const response = await fetch(`/api/campuses/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedCampusWithoutStudents), // Only send the updated campus data without the associated students
+        body: JSON.stringify(updatedCampusWithoutStudents), 
       });
       const data = await response.json();
-      setCampus(prevCampus => ({...prevCampus, ...updatedCampusWithoutStudents})); // Use the spread operator to overwrite only the fields that have been updated
+      setCampus(prevCampus => ({...prevCampus, ...updatedCampusWithoutStudents})); 
       setShowForm(false);
     } catch (error) {
       console.error(error);
@@ -44,11 +44,10 @@ const SingleCampus = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ campusId: null }), // Set the student's campus ID to null
+        body: JSON.stringify({ campusId: null }), 
       });
       const data = await response.json();
       setCampus((prevCampus) => {
-        // Create a new campus object with the updated student list
         const updatedStudents = prevCampus.students.filter(
           (student) => student.id !== studentId
         );

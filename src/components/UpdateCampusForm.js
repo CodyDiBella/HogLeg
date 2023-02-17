@@ -21,8 +21,8 @@ const UpdateCampusForm = ({ campus, onUpdate }) => {
           description,
         }),
       });
-      const updatedFields = await response.json(); // Get updated fields
-      onUpdate(updatedFields); // Pass updated fields to onUpdate callback
+      const updatedFields = await response.json(); 
+      onUpdate(updatedFields);
     } catch (error) {
       console.error(error);
     }

@@ -1,5 +1,6 @@
 {
   "name": "final-project",
+  "homepage": "https://hogwartslegacycharacters.codencodes.com/",
   "version": "0.0.1",
   "description": "A review time project",
   "main": "index.js",
@@ -7,7 +8,8 @@
     "start": "npm run seed & npm run build-watch & npm run start-server",
     "build-watch": "webpack -w",
     "start-server": "nodemon --watch server -e js,html server/index.js",
-    "seed": "node server/seed.js"
+    "seed": "node server/seed.js",
+    "build": "react-scripts build"
   },
   "keywords": [],
   "author": "",

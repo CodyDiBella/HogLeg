@@ -32,8 +32,8 @@ const AllCampuses = () => {
 
   return (
     <div className='campuses'>
-      <h1 className='titleNames'>All Campuses</h1>
-      <button onClick={handleAddCampusClick}>Add Campus</button>
+      <h1 className='titleNames'>All Houses</h1>
+      <button onClick={handleAddCampusClick}>Add House</button>
       {campuses.map((campus) => (
         <div key={campus.id}>
           <button onClick={() => handleDeleteClick(campus.id)}>X</button>
