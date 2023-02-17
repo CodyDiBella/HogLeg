@@ -15,7 +15,6 @@ const Main = () => {
     <Router>
         <Navbar />
         <Routes>
-          {/* <Route path="/" element={<div><h1>Home</h1></div>} /> */}
           <Route path="/" element={<AllCampuses />} />
           <Route path="/campuses" element={<AllCampuses />} />
           <Route path="/students" element={<AllStudents />} />

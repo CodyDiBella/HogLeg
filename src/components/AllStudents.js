@@ -30,15 +30,15 @@ const AllStudents = () => {
   };
 
   return (
-    <div>
-      <h1>All Students</h1>
+    <div className='students'>
+      <h1 className='titleNames' >All Students</h1>
       <button onClick={handleAddStudentClick}>Add Student</button>
       {students.map((student) => (
         <div key={student.id}>
-          <button onClick={() => handleDeleteStudentClick(student.id)}>X</button>
+        <button onClick={() => handleDeleteStudentClick(student.id)}>X</button>
           <Link to={`/students/${student.id}`}>
-            <h1>{`${student.firstName} ${student.lastName}`}</h1>
-            <img src={student.imageUrl} />
+            <h1 className='largeName'>{`${student.firstName} ${student.lastName}`}</h1>
+            <img className='studentImg' src={student.imageUrl} />
           </Link>
         </div>
       ))}

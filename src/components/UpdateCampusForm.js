@@ -27,8 +27,6 @@ const UpdateCampusForm = ({ campus, onUpdate }) => {
       console.error(error);
     }
   };
-  
-  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -53,8 +51,10 @@ const UpdateCampusForm = ({ campus, onUpdate }) => {
       </label>
       <br />
       <button type="submit">Update</button>
+            <button onClick={oncancel}>Cancel</button>
     </form>
   );
 };
+
 
 export default UpdateCampusForm;

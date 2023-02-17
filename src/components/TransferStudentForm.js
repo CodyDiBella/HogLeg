@@ -55,9 +55,9 @@ function TransferStudentForm() {
   }, [studentId]);
 
   return (
-    <div>
+    <div className="sortingHat addForms">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="campus">Select a campus:</label>
+        <label htmlFor="campus">Select a campus: </label>
         <select
           id="campus"
           name="campus"

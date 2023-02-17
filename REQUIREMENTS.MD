@@ -312,7 +312,7 @@
   
 <details>
   
-- [ ] Write a route to update an existing student
+- [x ] Write a route to update an existing student
   
 </details>  
   
@@ -328,7 +328,7 @@
 
 <details>
 
-- [ ] If a user attempts to add a new student or campus without a required field, a helpful message should be displayed
+- [ x] If a user attempts to add a new student or campus without a required field, a helpful message should be displayed
 - [ ] If a user attempts to access a page that doesn't exist (ex. `/potato`), a helpful "not found" message should be displayed
 - [ ] If a user attempts to view a student/campus that doesn't exist, a helpful message should be displayed
 - [ ] Whenever a component needs to wait for data to load from the server, a "loading" message should be displayed until the data is available
@@ -350,8 +350,8 @@
 
 <details>
 
-- [ ] Create a filter on all-students view to only show students who are not registered to a campus
-- [ ] Create a filter on the all-campuses view to only show campuses that do not have any registered students
+- [x ] Create a filter on all-students view to only show students who are not registered to a campus
+- [x ] Create a filter on the all-campuses view to only show campuses that do not have any registered students
 
 </details>
 

@@ -46,9 +46,9 @@ const SingleStudent = () => {
   };
 
   return (
-    <div>
+    <div className="singleViews">
       {student && (
-        <div>
+        <div className="studentViews">
           <h1>
             {student.firstName} {student.lastName}
           </h1>
@@ -67,11 +67,8 @@ const SingleStudent = () => {
               onCancel={() => setShowForm(false)}
             />
           )}
-          {showForm && (
-            <button onClick={() => setShowForm(false)}>Cancel</button>
-          )}
           <Link to={campus ? `/campuses/${campus.id}` : `/unassigned`}>
-            <h2>
+            <h2 className="houseTitle">
               {campus
                 ? `${campus.name}`
                 : "This person has not yet been sorted"}

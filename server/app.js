@@ -98,12 +98,14 @@ app.post('/api/students', async (req, res) => {
 app.put('/api/campuses/:id', async (req, res, next) => {
   try {
     const campus = await Campus.findByPk(req.params.id);
-    await campus.update(req.body);
+    const { name, address, imageUrl, description } = req.body;
+    await campus.update({ name, address, imageUrl, description });
     res.json(campus);
   } catch (err) {
     next(err);
   }
 });
+
 
 app.put('/api/students/:id', async (req, res, next) => {
   try {

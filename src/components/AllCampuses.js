@@ -31,14 +31,14 @@ const AllCampuses = () => {
   };
 
   return (
-    <div>
-      <h1>All Campuses</h1>
+    <div className='campuses'>
+      <h1 className='titleNames'>All Campuses</h1>
       <button onClick={handleAddCampusClick}>Add Campus</button>
       {campuses.map((campus) => (
         <div key={campus.id}>
           <button onClick={() => handleDeleteClick(campus.id)}>X</button>
           <Link to={`/campuses/${campus.id}`}>
-            <h2>{campus.name}</h2>
+            <h1 className='largeName'>{campus.name}</h1>
             <img src={campus.imageUrl} />
           </Link>
         </div>

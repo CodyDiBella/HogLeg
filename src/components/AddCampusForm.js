@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const defaultImageUrl = 'https://secretchicago.com/wp-content/uploads/2022/09/harrypotter5.jpg1_-1024x683.jpg';
+const defaultImageUrl =
+  'https://secretchicago.com/wp-content/uploads/2022/09/harrypotter5.jpg1_-1024x683.jpg';
 
 const AddCampusForm = () => {
-  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [address, setAddress] = useState('');
@@ -12,19 +11,24 @@ const AddCampusForm = () => {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log('handleSubmit: ', evt)
+    console.log('handleSubmit: ', evt);
 
     fetch('/api/campuses', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, imageUrl, address, description }),
+      body: JSON.stringify({
+        name,
+        imageUrl: imageUrl || defaultImageUrl,
+        address,
+        description,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        navigate(`/campuses/${data.id}`);
+        window.location.href = `/campuses/${data.id}`;
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -54,22 +58,36 @@ const AddCampusForm = () => {
   }
 
   return (
-    <form className='addCampus' onSubmit={handleSubmit}>
+    <div className="addCampusContainer">
+    <form className="addCampus addForms" onSubmit={handleSubmit}>
       <label htmlFor="name">Name: </label>
-      <input type='text' id='name' name='name' value={name} onChange={handleNameChange} />
+      <input type="text" id="name" name="name" value={name} onChange={handleNameChange} required />
       <br />
       <label htmlFor="imageUrl">Image URL: </label>
-      <input type='URL' id='imageUrl' name='imageUrl' value={imageUrl} onChange={handleImageUrlChange} />
+      <input
+        type="URL"
+        id="imageUrl"
+        name="imageUrl"
+        value={imageUrl}
+        onChange={handleImageUrlChange}
+      />
       <br />
       <label htmlFor="address">Address: </label>
-      <input type='text' id='address' name='address' value={address} onChange={handleAddressChange} />
+      <input type="text" id="address" name="address" value={address} onChange={handleAddressChange} required />
       <br />
       <label htmlFor="description">Description: </label>
-      <input type='text' id='description' name='description' value={description} onChange={handleDescriptionChange} />
+      <input
+        type="text"
+        id="description"
+        name="description"
+        value={description}
+        onChange={handleDescriptionChange}
+      required />
       <br />
-      <button type='submit'>Submit</button>
+      <button type="submit">Submit</button>
     </form>
+    </div>
   );
-}
+};
 
 export default AddCampusForm;

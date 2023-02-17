@@ -15,7 +15,7 @@ const UnassignedStudents = () => {
   }, []);
 
   return (
-    <div>
+    <div className="singleViews">
       <h1>Students to be sorted</h1>
       {unassignedStudents.length > 0 ? (
         <div>

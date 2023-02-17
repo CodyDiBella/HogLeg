@@ -3,19 +3,15 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        {/* <li>
-          <Link to="/">Home</Link>
-        </li> */}
-        <li>
-          <Link to="/campuses">All Campuses</Link>
-        </li>
-        <li>
-          <Link to="/students">All Students</Link>
-        </li>
-      </ul>
-    </nav>
+<nav className="nav">
+  <div>
+    <Link to="/campuses">All Campuses</Link>
+  </div>
+  <div>
+    <Link to="/students">All Students</Link>
+  </div>
+</nav>
+
   );
 };
 

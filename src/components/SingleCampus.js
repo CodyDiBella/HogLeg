@@ -28,12 +28,14 @@ const SingleCampus = () => {
         body: JSON.stringify(updatedCampusWithoutStudents), // Only send the updated campus data without the associated students
       });
       const data = await response.json();
-      setCampus(data);
+      setCampus(prevCampus => ({...prevCampus, ...updatedCampusWithoutStudents})); // Use the spread operator to overwrite only the fields that have been updated
       setShowForm(false);
     } catch (error) {
       console.error(error);
     }
   };
+  
+  
 
   const handleUnregisterStudent = async (studentId) => {
     try {
@@ -69,13 +71,14 @@ const SingleCampus = () => {
   };
 
   return (
-    <div>
+    <div className="singleViews">
       {campus && (
         <div>
           <h1>{campus.name}</h1>
           <img src={campus.imageUrl} alt={campus.name} />
           <p>Address: {campus.address}</p>
           <p>{campus.description}</p>
+          <div className="singleViewsButt">
           {!showForm && (
             <button onClick={() => setShowForm(true)}>Update House</button>
           )}
@@ -86,15 +89,13 @@ const SingleCampus = () => {
               onCancel={() => setShowForm(false)}
             />
           )}
-          {showForm && (
-            <button onClick={() => setShowForm(false)}>Cancel</button>
-          )}
           <button onClick={() => handleDeleteClick(campus.id)}>
             Delete House
           </button>
+          </div>
           {campus.students && campus.students.length > 0 && (
             <div>
-              <h2>Students:</h2>
+              <p>Students:</p>
               <ul>
                 {campus.students.map((student) => (
                   <li key={student.id}>

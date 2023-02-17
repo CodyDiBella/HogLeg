@@ -1,36 +1,43 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+const defaultImageUrl = 'https://i.pinimg.com/originals/35/d1/93/35d19306ddaa70da7790bf440c2860c8.jpg';
 
 const AddStudentForm = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log('handleSubmit: ', evt)
+    if (!firstName || !lastName) {
+      setErrorMessage('Please fill in all required fields');
+      return;
+    }
 
+    const data = imageUrl ? { firstName, lastName, imageUrl } : { firstName, lastName, imageUrl: defaultImageUrl };
     fetch('/api/students', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ firstName, lastName, imageUrl}),
+      body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        navigate(`/students/${data.id}`); // Navigate to the new student's single view
+        // Redirect to the new student's page
+        window.location.href = `/students/${data.id}`;
       })
       .catch((error) => {
         console.error('Error:', error);
       });
 
-    // Clear the form
+    // Clear the form and error message
     setFirstName('');
     setLastName('');
     setImageUrl('');
+    setErrorMessage('');
   }
 
   function handleFirstNameChange(evt) {
@@ -46,19 +53,23 @@ const AddStudentForm = () => {
   }
 
   return (
-    <form className='addStudent' onSubmit={handleSubmit}>
+    <div className="addCampusContainer">
+    <form className='addStudent addForms' onSubmit={handleSubmit}>
       <label htmlFor="firstName">First Name: </label>
-      <input type='text' id='firstName' name='firstName' value={firstName} onChange={handleFirstNameChange} />
+      <input type='text' id='firstName' name='firstName' value={firstName} onChange={handleFirstNameChange} required />
       <br />
       <label htmlFor="lastName">Last Name: </label>
-      <input type='text' id='lastName' name='lastName' value={lastName} onChange={handleLastNameChange} />
+      <input type='text' id='lastName' name='lastName' value={lastName} onChange={handleLastNameChange} required />
       <br />
       <label htmlFor="imageUrl">Image URL: </label>
       <input type='URL' id='imageUrl' name='imageUrl' value={imageUrl} onChange={handleImageUrlChange} />
       <br />
       <button type='submit'>Submit</button>
+      {errorMessage && <div className="error">{errorMessage}</div>}
     </form>
+    </div>
   );
 }
 
 export default AddStudentForm;
+
