@@ -1,0 +1,285 @@
+@font-face {
+    font-family: 'Harry Potter';
+    src: url('//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot');
+    src: url('//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.eot?#iefix') format('embedded-opentype'),
+           url('//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2') format('woff2'),
+           url('//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff') format('woff'),
+           url('//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf') format('truetype'),
+           url('//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter') format('svg');
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Harry Potter', sans-serif;
+    background-image: url('https://e0.pxfuel.com/wallpapers/535/1021/desktop-wallpaper-black-brick-texture-42269-dark-stone.jpg');
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Harry Potter', cursive;
+    margin: 0;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ffc800;
+    font-family: "Harry Potter", fantasy;
+    text-align: center;
+    text-shadow: 10px 10px 15px rgb(0, 0, 0);
+  }
+  
+  a:hover {
+    color: #fff394;
+  }
+  
+  .nav {
+    background: linear-gradient(to bottom, #a30003, #4f0000);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    box-shadow: 20px 20px 15px rgb(0, 0, 0);
+  }
+
+  .nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 25px;
+    font-family: "Harry Potter", fantasy;
+  }
+
+  
+  button {
+    background-color: #1c1c1c;
+    font-family: 'Harry Potter', cursive;
+    color: #73ff00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 25px;
+    box-shadow: 10px 10px 15px rgb(0, 0, 0);
+    margin-left: 10px;
+  }
+
+  .largeName {
+    font-size: 60px;
+    text-shadow: black;
+  }
+
+  .singleViews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    text-align: center;
+  }
+  
+  .singleViews h1 {
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: 10px 10px 15px rgb(0, 0, 0);
+  }
+  
+  .singleViews p {
+    color: #e0dfdf;
+    text-shadow: 10px 10px 15px rgb(0, 0, 0);
+    font-size: 25px;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 800px;
+    margin: 20px;
+  }
+
+  #cursor {
+    height: 110px;
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-image: url("https://www.pinclipart.com/picdir/big/524-5246949_harry-potter-wand-clipart.png");
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  /*  */
+  
+  .singleViews img {
+    width: 500px;
+  }
+  
+  .singleViews ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .singleViewsButt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .singleViews li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  .singleViews form {
+    background-image: url('https://wallpaperaccess.com/full/3872532.jpg');
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 25px;
+  }
+
+.singleViews form input {
+  color: rgb(255, 255, 255);
+  font-family: 'HarryPotterRegular';
+  background-color: black;
+  border: none;
+  font-size: 25px;
+}
+
+.singleViews form textarea {
+    color: rgb(255, 255, 255);
+    font-family: 'HarryPotterRegular';
+    background-color: black;
+    border: none;
+    font-size: 25px;
+  }
+
+  .studentViews button {
+    margin: 50px;
+  }
+
+  .houseTitle {
+    font-size: 65px;
+  }
+  
+  
+  button:hover {
+    background-color: #5d5d5d;
+    color: #00dd16;
+  }
+  
+  .campusesViewName {
+    text-shadow: black;
+    size: 50px;
+  }
+  
+  
+  img {
+    width: 500px;
+    margin: 50px;
+  }
+
+  .campuses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .students {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .studentImg {
+    width: 500px;
+    box-shadow: 20px 20px 15px rgb(0, 0, 0);
+  }
+
+  .titleNames {
+    color: #eeba30;
+    margin: 10px;
+  }
+
+  .addForms {
+    background-image: url('https://wallpaperaccess.com/full/3872532.jpg');
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 40vw;
+  }
+    
+  .addCampusContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .sortingHat {
+    margin: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7e740078-f753-4701-a779-c7124d72087f/d6wp8hm-5dc070e2-7109-4933-9d0f-c0be507f94a0.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdlNzQwMDc4LWY3NTMtNDcwMS1hNzc5LWM3MTI0ZDcyMDg3ZlwvZDZ3cDhobS01ZGMwNzBlMi03MTA5LTQ5MzMtOWQwZi1jMGJlNTA3Zjk0YTAuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.PIbTCigfiVS_14bSsQMB2BrJKjYX3kxtqhcYnMCWaB4');
+    background-size: cover;
+    font-size: 30px;
+    color: #fbff00;
+  }
+
+  select {
+    appearance: none;
+    background-color: #313131;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    padding: 0.5rem;
+  }
+  
+  .btn {
+    background-color: #ffa07a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ff7f50;
+  }
+    
