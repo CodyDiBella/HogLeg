@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hogleg-dev-121003-authRole",
+      "UnauthRoleArn": "arn:aws:iam::876176214886:role/amplify-hogleg-dev-121003-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::876176214886:role/amplify-hogleg-dev-121003-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-hogleg-dev-121003-deployment",
+      "UnauthRoleName": "amplify-hogleg-dev-121003-unauthRole",
+      "StackName": "amplify-hogleg-dev-121003",
+      "StackId": "arn:aws:cloudformation:us-east-2:876176214886:stack/amplify-hogleg-dev-121003/a24bc310-b080-11ed-8b2d-02550ed18782",
+      "AmplifyAppId": "d2qrh3lrsqzreb"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "hogleg",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
